@@ -5,10 +5,10 @@
 
       </head>
       <body>
-         <nav class="navbar navbar-inverse navbar-fixed-top">
+         <nav class="navbar navbar-inverse navbar-fixed-top blue">
             <div class="container">
                <div class="navbar-header">
-                  <a class="navbar-brand" href="#">URL Shortener</a>
+                  <a class="navbar-brand" style="font-size: 30px" href="#">URL Shortener</a>
                </div>
                <div id="navbar" class="navbar-collapse collapse">
                </div>
@@ -22,7 +22,7 @@
                {% if not short_url %}
                <div class="row">
                   <div class="col-md-offset-5 col-md-3">
-                     <h4>Enter URL to shorten.</h4>
+                     <h4>Enter URL to shorten</h4>
                      <form method="post" class="navbar-form navbar-right" action="">
                         <div class="form-group">
                            <input type="text" id="url" name="url" class="form-control input-lg chat-input" placeholder="URL" />
@@ -34,6 +34,8 @@
                {% else %}
                <div>
                   Enjoy, your shortened URL is: <a href="{{short_url}}"> {{short_url}}</a>
+                  <br/>
+                  To shorten some more urls, <a href="http://localhost:5500">Click here</a>
                </div>
                {% endif %}
             </div>

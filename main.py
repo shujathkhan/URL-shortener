@@ -84,8 +84,7 @@ def home():
 @app.route('/'+ subdomain +'<short_url>')
 def redirect_short_url(short_url):
     decoded = toBase10(short_url)
-    print(decoded)
-    print(short_url)
+
     url = host 
     with sqlite3.connect('urls.db') as conn:
         cursor = conn.cursor()
@@ -95,7 +94,7 @@ def redirect_short_url(short_url):
             short = res.fetchone()
             if short is not None:
                 url = base64.urlsafe_b64decode(short[0])
-                print("uRL:",url)
+                
         except Exception as e:
             print(e)
     return redirect(url)
